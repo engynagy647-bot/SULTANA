@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-ar="SULTANA | أكل راقي" data-en="SULTANA | Fine Food">SULTANA | أكل راقي</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink: #FF5D8F;     
+  --purple: #B983FF;   
+  --peach: #FFD6E0;    
+  --cream: #FFF8FB;    
+  --brown: #5A3E46;    
+  --white: #ffffff;
+}
+
+*{margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth;}
+
+html[lang="ar"] body{font-family: 'Tajawal', sans-serif;}
+html[lang="en"] body{font-family: 'Poppins', sans-serif;}
+
+body{
+  background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+  color: var(--brown);
+  transition: all .3s ease;
+}
+
+header{
+  
+  background-image: url("WhatsApp Image 2026-06-30 at 3.24.02 PM.jpeg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px; 
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(185,131,255,0.3);
+  animation: fadeDown 0.8s ease;
+  border-bottom: none;
+}
+@keyframes fadeDown{from{opacity:0; transform:translateY(-20px)} to{opacity:1; transform:translateY(0)}}
+
+
+header::after{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25); 
+  z-index: 1;
+}
+
+header > *{
+  position: relative;
+  z-index: 2; 
+}
+
+.logo{display: none;} 
+
+.lang-switch{
+  position: absolute;
+  top: 20px; left: 20px;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.5);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .3s;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+}
+.lang-switch:hover{background: rgba(255,255,255,0.35); transform: scale(1.05);}
+
+header p{
+  color: var(--white); /
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.container{max-width: 1200px; margin: 50px auto; padding: 0 20px;}
+.section-title{
+  font-size: 32px; font-weight: 900;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--brown);
+  position: relative;
+}
+.section-title::after{
+  content:'';
+  width: 80px; height: 4px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  display: block; margin: 12px auto 0; border-radius: 2px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.card{
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255,93,143,0.12);
+  transition: all .4s cubic-bezier(.2,.8,.2,1);
+  border: 1px solid var(--peach);
+  animation: fadeUp 0.6s ease backwards;
+}
+.card:nth-child(1){animation-delay:.1s}
+.card:nth-child(2){animation-delay:.2s}
+.card:nth-child(3){animation-delay:.3s}
+.card:nth-child(4){animation-delay:.4s}
+.card:nth-child(5){animation-delay:.5s}
+@keyframes fadeUp{from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)}}
+
+.card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(185,131,255,0.25);
+}
+
+.card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.card:hover img{transform: scale(1.08);}
+
+.card-body{padding: 20px;}
+
+.card h3{
+  font-size: 22px; font-weight: 900;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p{font-size: 15px; color: #7a6a70; margin-bottom: 14px; line-height: 1.7;}
+
+.price{
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--pink);
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+.price span{display: block;}
+
+.btn{
+  display: inline-block;
+  width: 100%;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  color: var(--white);
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all .3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255,93,143,0.4);
+}
+
+.qty-control{
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin-bottom: 12px;
+}
+.qty-control button{
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 2px solid var(--pink); background: var(--white);
+  color: var(--pink); font-size: 20px; font-weight: 700;
+  cursor: pointer; transition: all .2s;
+}
+.qty-control button:hover{background: var(--pink); color: var(--white);}
+.qty-control span{font-size: 18px; font-weight: 700; min-width: 30px; text-align: center;}
+
+footer{
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, var(--peach), var(--cream));
+  color: #8a7a80;
+  font-size: 14px;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="lang-switch" onclick="toggleLang()">English</button>
+  
+  <p data-ar="أكل بيتي راقي... يفتح النفس من الصورة" data-en="Home-made Fine Food... Looks Delicious">أكل بيتي راقي... يفتح النفس من الصورة</p>
+</header>
+
+<div class="container">
+  <h2 class="section-title" data-ar="المنيو" data-en="Menu">المنيو</h2>
+
+  <div class="grid">
+    
+    <div class="card" data-name-ar="طاجن فراخ بالكريمه" data-name-en="Creamy Chicken Tajine">
+      <img src="Screenshot%202026-06-29%20122753.png" alt="طاجن فراخ بالكريمه">
+      <div class="card-body">
+        <h3 data-ar="طاجن فراخ بالكريمه" data-en="Creamy Chicken Tajine">طاجن فراخ بالكريمه</h3>
+        <p data-ar="فراخ طرية بالكريمة والجبن الموتزاريلا السايحة" data-en="Tender chicken with cream and melted mozzarella">فراخ طرية بالكريمة والجبن الموتزاريلا السايحة</p>
+        <div class="price">
+          <span class="egp" data-ar="380 جنيه" data-en="380 EGP">380 جنيه</span>
+        </div>
+        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      </div>
+    </div>
+
+    <div class="card" data-name-ar="مكرونه بشاميل" data-name-en="Beef Bechamel Pasta">
+      <img src="Screenshot%202026-06-29%20123002.png" alt="مكرونه بشاميل بالمفروم">
+      <div class="card-body">
+        <h3 data-ar="مكرونه بشاميل" data-en="Beef Bechamel Pasta">مكرونه بشاميل</h3>
+        <p data-ar="مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي" data-en="Bechamel pasta with minced beef and creamy sauce">مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي</p>
+        <div class="price">
+          <span class="egp" data-ar="320 جنيه" data-en="320 EGP">320 جنيه</span>
+        </div>
+        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      </div>
+    </div>
+
+    <div class="card" data-name-ar="بيض تركى خضار وجبن" data-name-en="Turkish Egg with Veggies & Cheese">
+      <img src="Screenshot%202026-06-29%20123135.png" alt="بيض تركى">
+      <div class="card-body">
+        <h3 data-ar="بيض تركى خضار وجبن" data-en="Turkish Egg with Veggies & Cheese">بيض تركى خضار وجبن</h3>
+        <p data-ar="بيض مسلوق مع الخضار والجبن والطماطم" data-en="Boiled eggs with vegetables, cheese and tomato">بيض مسلوق مع الخضار والجبن والطماطم</p>
+        
+        <div class="qty-control">
+          <button type="button" onclick="changeEggs(-1)">-</button>
+          <span id="eggCount">5</span> <span data-ar="بيضات" data-en="eggs">بيضات</span>
+          <button type="button" onclick="changeEggs(1)">+</button>
+        </div>
+
+        <div class="price" id="eggPrice">
+          <span class="egp" data-ar="100 جنيه" data-en="100 EGP">100 جنيه</span>
+        </div>
+        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      </div>
+    </div>
+
+    <div class="card" data-name-ar="رز بسمتي بالزعفران" data-name-en="Saffron Basmati Rice">
+      <img src="rice.png" alt="رز بسمتي بالزعفران">
+      <div class="card-body">
+        <h3 data-ar="رز بسمتي بالزعفران" data-en="Saffron Basmati Rice">رز بسمتي بالزعفران</h3>
+        <p data-ar="رز بسمتي مفلفل بطعم الزعفران الأصلي والمكسرات" data-en="Fluffy basmati rice with authentic saffron and nuts">رز بسمتي مفلفل بطعم الزعفران الأصلي والمكسرات</p>
+        <div class="price">
+          <span class="egp" data-ar="120 جنيه" data-en="120 EGP">120 جنيه</span>
+        </div>
+        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      </div>
+    </div>
+
+    
+    <div class="card" data-name-ar="سلطة يوناني بالجبنة" data-name-en="Greek Salad with Feta">
+      <img src="salad.png" alt="سلطة يوناني بالجبنة">
+      <div class="card-body">
+        <h3 data-ar="سلطة يوناني بالجبنة" data-en="Greek Salad with Feta">سلطة يوناني بالجبنة</h3>
+        <p data-ar="خضار طازج مع جبنة فيتا وزيتون وصوص زيت زيتون" data-en="Fresh veggies with feta cheese, olives & olive oil dressing">خضار طازج مع جبنة فيتا وزيتون وصوص زيت زيتون</p>
+        <div class="price">
+          <span class="egp" data-ar="150 جنيه" data-en="150 EGP">150 جنيه</span>
+        </div>
+        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 SULTANA | <span data-ar="معمول بحب وبلمسة بناتي 💖" data-en="Made with Love & a Girly Touch 💖">معمول بحب وبلمسة بناتي 💖</span>
+</footer>
+
+<script>
+let currentLang = 'ar';
+
+function toggleLang(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  
+  document.querySelector('.lang-switch').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+  
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+    el.innerText = el.getAttribute(`data-${currentLang}`);
+  });
+}
+
+let eggCount = 5;
+const basePrice = 100;
+
+function changeEggs(num){
+  eggCount += num;
+  if(eggCount < 1) eggCount = 1;
+  
+  document.getElementById('eggCount').innerText = eggCount;
+  
+  const newPriceEGP = Math.max(100, basePrice + ((eggCount - 5) * 10));
+  const newPriceUSD = Math.max(6, 6 + ((eggCount - 5) * 0.6));
+  
+  const egpText = currentLang === 'ar' ? `${newPriceEGP} جنيه` : `${newPriceEGP} EGP`;
+  const usdText = currentLang === 'ar' ? `${newPriceUSD} pound` : `${newPriceUSD} pound`;
+  
+  document.querySelector('#eggPrice .egp').innerText = egpText;
+  document.querySelector('#eggPrice .usd').innerText = usdText;
+}
+
+function orderNow(btn){
+  const card = btn.closest('.card');
+  const name = card.getAttribute(`data-name-${currentLang}`);
+  alert(currentLang === 'ar' ? `تمت إضافة ${name} للسلة 🛒` : `${name} added to cart 🛒`);
+}
+</script>
+
+</body>
+</html>
