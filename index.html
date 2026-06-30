@@ -1,332 +1,242 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-ar="SULTANA | أكل راقي" data-en="SULTANA | Fine Food">SULTANA | أكل راقي</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-ar="سلطانة | أكل بيتي راقي" data-en="Sultana | Fine Home-Made Food">سلطانة | أكل بيتي راقي</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="سلطانة — أكل بيتي راقي يوصلك لحد باب بيتك في القاهرة. طاجن فراخ بالكريمة، مكرونة بشاميل، بيض تركي وأكثر.">
+  <meta name="keywords" content="أكل بيتي, توصيل أكل, القاهرة, طاجن فراخ, مكرونة بشاميل, بيض تركي, سلطانة, home food, delivery, Cairo">
+  <meta name="author" content="Sultana">
 
-<style>
-:root{
-  --pink: #FF5D8F;     
-  --purple: #B983FF;   
-  --peach: #FFD6E0;    
-  --cream: #FFF8FB;    
-  --brown: #5A3E46;    
-  --white: #ffffff;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="سلطانة | أكل بيتي راقي">
+  <meta property="og:description" content="أكل بيتي راقي يوصلك لحد باب بيتك في القاهرة">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/logo.jpeg">
 
-*{margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth;}
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
 
-html[lang="ar"] body{font-family: 'Tajawal', sans-serif;}
-html[lang="en"] body{font-family: 'Poppins', sans-serif;}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-body{
-  background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
-  color: var(--brown);
-  transition: all .3s ease;
-}
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-header{
-  
-  background-image: url("WhatsApp Image 2026-06-30 at 3.24.02 PM.jpeg"); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 80px 20px; 
-  text-align: center;
-  position: relative;
-  box-shadow: 0 8px 30px rgba(185,131,255,0.3);
-  animation: fadeDown 0.8s ease;
-  border-bottom: none;
-}
-@keyframes fadeDown{from{opacity:0; transform:translateY(-20px)} to{opacity:1; transform:translateY(0)}}
-
-
-header::after{
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25); 
-  z-index: 1;
-}
-
-header > *{
-  position: relative;
-  z-index: 2; 
-}
-
-.logo{display: none;} 
-
-.lang-switch{
-  position: absolute;
-  top: 20px; left: 20px;
-  background: rgba(255,255,255,0.25);
-  border: 1px solid rgba(255,255,255,0.5);
-  color: var(--white);
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: all .3s;
-  font-size: 14px;
-  backdrop-filter: blur(4px);
-}
-.lang-switch:hover{background: rgba(255,255,255,0.35); transform: scale(1.05);}
-
-header p{
-  color: var(--white); /
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 5px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-.container{max-width: 1200px; margin: 50px auto; padding: 0 20px;}
-.section-title{
-  font-size: 32px; font-weight: 900;
-  text-align: center;
-  margin-bottom: 40px;
-  color: var(--brown);
-  position: relative;
-}
-.section-title::after{
-  content:'';
-  width: 80px; height: 4px;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
-  display: block; margin: 12px auto 0; border-radius: 2px;
-}
-
-.grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-}
-
-.card{
-  background: var(--white);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(255,93,143,0.12);
-  transition: all .4s cubic-bezier(.2,.8,.2,1);
-  border: 1px solid var(--peach);
-  animation: fadeUp 0.6s ease backwards;
-}
-.card:nth-child(1){animation-delay:.1s}
-.card:nth-child(2){animation-delay:.2s}
-.card:nth-child(3){animation-delay:.3s}
-.card:nth-child(4){animation-delay:.4s}
-.card:nth-child(5){animation-delay:.5s}
-@keyframes fadeUp{from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)}}
-
-.card:hover{
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(185,131,255,0.25);
-}
-
-.card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform .4s ease;
-}
-.card:hover img{transform: scale(1.08);}
-
-.card-body{padding: 20px;}
-
-.card h3{
-  font-size: 22px; font-weight: 900;
-  margin-bottom: 8px;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card p{font-size: 15px; color: #7a6a70; margin-bottom: 14px; line-height: 1.7;}
-
-.price{
-  font-weight: 900;
-  font-size: 18px;
-  color: var(--pink);
-  margin-bottom: 15px;
-  line-height: 1.8;
-}
-.price span{display: block;}
-
-.btn{
-  display: inline-block;
-  width: 100%;
-  padding: 12px 18px;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
-  color: var(--white);
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  transition: all .3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-.btn:hover{
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255,93,143,0.4);
-}
-
-.qty-control{
-  display: flex; align-items: center; justify-content: center;
-  gap: 12px; margin-bottom: 12px;
-}
-.qty-control button{
-  width: 36px; height: 36px; border-radius: 50%;
-  border: 2px solid var(--pink); background: var(--white);
-  color: var(--pink); font-size: 20px; font-weight: 700;
-  cursor: pointer; transition: all .2s;
-}
-.qty-control button:hover{background: var(--pink); color: var(--white);}
-.qty-control span{font-size: 18px; font-weight: 700; min-width: 30px; text-align: center;}
-
-footer{
-  text-align: center;
-  padding: 30px;
-  margin-top: 60px;
-  background: linear-gradient(90deg, var(--peach), var(--cream));
-  color: #8a7a80;
-  font-size: 14px;
-  font-weight: 700;
-}
-</style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header>
-  <button class="lang-switch" onclick="toggleLang()">English</button>
-  
-  <p data-ar="أكل بيتي راقي... يفتح النفس من الصورة" data-en="Home-made Fine Food... Looks Delicious">أكل بيتي راقي... يفتح النفس من الصورة</p>
-</header>
+  <!-- ============ Navbar ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Sultana">
+      </a>
 
-<div class="container">
-  <h2 class="section-title" data-ar="المنيو" data-en="Menu">المنيو</h2>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu" class="nav-link" data-ar="المنيو" data-en="Menu">المنيو</a></li>
+        <li><a href="#about" class="nav-link" data-ar="عن سلطانة" data-en="About">عن سلطانة</a></li>
+        <li><a href="#delivery" class="nav-link" data-ar="التوصيل" data-en="Delivery">التوصيل</a></li>
+        <li><a href="order.html" class="nav-link nav-link-cta" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a></li>
+        <li>
+          <button class="lang-switch" onclick="toggleLang()">English</button>
+        </li>
+      </ul>
 
-  <div class="grid">
-    
-    <div class="card" data-name-ar="طاجن فراخ بالكريمه" data-name-en="Creamy Chicken Tajine">
-      <img src="Screenshot%202026-06-29%20122753.png" alt="طاجن فراخ بالكريمه">
-      <div class="card-body">
-        <h3 data-ar="طاجن فراخ بالكريمه" data-en="Creamy Chicken Tajine">طاجن فراخ بالكريمه</h3>
-        <p data-ar="فراخ طرية بالكريمة والجبن الموتزاريلا السايحة" data-en="Tender chicken with cream and melted mozzarella">فراخ طرية بالكريمة والجبن الموتزاريلا السايحة</p>
-        <div class="price">
-          <span class="egp" data-ar="380 جنيه" data-en="380 EGP">380 جنيه</span>
-        </div>
-        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- ============ Hero Section ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <img src="assets/images/logo.png" alt="Sultana" class="hero-logo">
+      <h1 class="hero-tagline" data-ar="أكل بيتي راقي... يفتح النفس من الصورة" data-en="Fine Home-Made Food... Looks Delicious">أكل بيتي راقي... يفتح النفس من الصورة</h1>
+      <p class="hero-subtitle" data-ar="أشهى الأكلات البيتي توصلك لحد باب بيتك في القاهرة" data-en="The finest home-made dishes delivered to your door in Cairo">أشهى الأكلات البيتي توصلك لحد باب بيتك في القاهرة</p>
+      <div class="hero-cta">
+        <a href="#menu" class="hero-btn primary" data-ar="شوف المنيو" data-en="View Menu">شوف المنيو</a>
+        <a href="order.html" class="hero-btn secondary" data-ar="اطلب دلوقتي" data-en="Order Now">اطلب دلوقتي</a>
       </div>
     </div>
+    <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+  </section>
 
-    <div class="card" data-name-ar="مكرونه بشاميل" data-name-en="Beef Bechamel Pasta">
-      <img src="Screenshot%202026-06-29%20123002.png" alt="مكرونه بشاميل بالمفروم">
-      <div class="card-body">
-        <h3 data-ar="مكرونه بشاميل" data-en="Beef Bechamel Pasta">مكرونه بشاميل</h3>
-        <p data-ar="مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي" data-en="Bechamel pasta with minced beef and creamy sauce">مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي</p>
-        <div class="price">
-          <span class="egp" data-ar="320 جنيه" data-en="320 EGP">320 جنيه</span>
+  <!-- ============ Menu Section ============ -->
+  <section class="section" id="menu">
+    <div class="container">
+      <h2 class="section-title" data-ar="المنيو" data-en="Our Menu">المنيو</h2>
+
+      <div class="grid">
+
+        <!-- Card 1: Creamy Chicken Tajine -->
+        <div class="card" data-name-ar="طاجن فراخ بالكريمه" data-name-en="Creamy Chicken Tajine">
+          <div class="card-image-wrapper">
+            <img src="assets/images/tajine.png" alt="طاجن فراخ بالكريمه" loading="lazy">
+            <span class="card-badge" data-ar="الأكثر طلباً" data-en="Best Seller"><i class="fas fa-fire"></i> <span data-ar="الأكثر طلباً" data-en="Best Seller">الأكثر طلباً</span></span>
+          </div>
+          <div class="card-body">
+            <h3 data-ar="طاجن فراخ بالكريمه" data-en="Creamy Chicken Tajine">طاجن فراخ بالكريمه</h3>
+            <p data-ar="فراخ طرية بالكريمة والجبن الموتزاريلا السايحة — طعم لا يُقاوم" data-en="Tender chicken with cream and melted mozzarella — irresistible taste">فراخ طرية بالكريمة والجبن الموتزاريلا السايحة — طعم لا يُقاوم</p>
+            <div class="price">
+              <span class="egp" data-ar="380 جنيه" data-en="380 EGP">380 جنيه</span>
+            </div>
+            <button class="btn" onclick="orderNow(this)" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</button>
+          </div>
         </div>
-        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+
+        <!-- Card 2: Beef Bechamel Pasta -->
+        <div class="card" data-name-ar="مكرونه بشاميل" data-name-en="Beef Bechamel Pasta">
+          <div class="card-image-wrapper">
+            <img src="assets/images/bechamel.png" alt="مكرونه بشاميل بالمفروم" loading="lazy">
+            <span class="card-badge" data-ar="كلاسيك" data-en="Classic"><i class="fas fa-crown"></i> <span data-ar="كلاسيك" data-en="Classic">كلاسيك</span></span>
+          </div>
+          <div class="card-body">
+            <h3 data-ar="مكرونه بشاميل" data-en="Beef Bechamel Pasta">مكرونه بشاميل</h3>
+            <p data-ar="مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي — زي بتاعت ماما" data-en="Bechamel pasta with minced beef and creamy sauce — just like mom's">مكرونة بشاميل باللحم المفروم المعصج وصوص بشاميل كريمي — زي بتاعت ماما</p>
+            <div class="price">
+              <span class="egp" data-ar="320 جنيه" data-en="320 EGP">320 جنيه</span>
+            </div>
+            <button class="btn" onclick="orderNow(this)" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</button>
+          </div>
+        </div>
+
+        <!-- Card 3: Turkish Eggs -->
+        <div class="card" data-name-ar="بيض تركى خضار وجبن" data-name-en="Turkish Egg with Veggies & Cheese">
+          <div class="card-image-wrapper">
+            <img src="assets/images/turkish-eggs.png" alt="بيض تركى خضار وجبن" loading="lazy">
+            <span class="card-badge" data-ar="صحي" data-en="Healthy"><i class="fas fa-leaf"></i> <span data-ar="صحي" data-en="Healthy">صحي</span></span>
+          </div>
+          <div class="card-body">
+            <h3 data-ar="بيض تركى خضار وجبن" data-en="Turkish Egg with Veggies & Cheese">بيض تركى خضار وجبن</h3>
+            <p data-ar="بيض مع الخضار الطازج والجبن والطماطم — فطار ملوكي" data-en="Eggs with fresh vegetables, cheese and tomato — a royal breakfast">بيض مع الخضار الطازج والجبن والطماطم — فطار ملوكي</p>
+
+            <div class="price" id="eggPrice">
+              <span class="egp" data-ar="100 جنيه" data-en="100 EGP">100 جنيه</span>
+            </div>
+            <button class="btn" onclick="orderNow(this)" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</button>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="card" data-name-ar="بيض تركى خضار وجبن" data-name-en="Turkish Egg with Veggies & Cheese">
-      <img src="Screenshot%202026-06-29%20123135.png" alt="بيض تركى">
-      <div class="card-body">
-        <h3 data-ar="بيض تركى خضار وجبن" data-en="Turkish Egg with Veggies & Cheese">بيض تركى خضار وجبن</h3>
-        <p data-ar="بيض مسلوق مع الخضار والجبن والطماطم" data-en="Boiled eggs with vegetables, cheese and tomato">بيض مسلوق مع الخضار والجبن والطماطم</p>
-        
-        <div class="qty-control">
-          <button type="button" onclick="changeEggs(-1)">-</button>
-          <span id="eggCount">5</span> <span data-ar="بيضات" data-en="eggs">بيضات</span>
-          <button type="button" onclick="changeEggs(1)">+</button>
-        </div>
+  <!-- ============ About Section ============ -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <h2 class="section-title" data-ar="عن سلطانة" data-en="About Sultana">عن سلطانة</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3 data-ar="أكل بيتي من القلب... لقلبك" data-en="Home-Made Food from Our Heart... to Yours">أكل بيتي من القلب... لقلبك</h3>
+          <p data-ar="سلطانة مش مجرد أكل — سلطانة هي لمسة بيت، وطعم حنين، وأكلات اتعملت بحب حقيقي. كل طبق بيطلع من مطبخنا بعناية واهتمام، بمكونات طازجة ومختارة بنفسنا، وبوصفات ورثناها وطوّرناها عشان تجيلك على أحسن صورة." data-en="Sultana isn't just food — it's a touch of home, a taste of warmth, and dishes made with genuine love. Every plate leaves our kitchen with care and attention, using fresh hand-picked ingredients and recipes we've inherited and perfected to bring you the very best.">سلطانة مش مجرد أكل — سلطانة هي لمسة بيت، وطعم حنين، وأكلات اتعملت بحب حقيقي. كل طبق بيطلع من مطبخنا بعناية واهتمام، بمكونات طازجة ومختارة بنفسنا، وبوصفات ورثناها وطوّرناها عشان تجيلك على أحسن صورة.</p>
+          <p data-ar="من أول ما تشوف الصورة هتحس إن الأكل ده مختلف — لأن اللي بيعمله بيحبه فعلاً. نوصّلك لحد باب بيتك في القاهرة، وكل لقمة هتقولك: ده أكل بيتي راقي." data-en="From the moment you see the photo, you'll know this food is different — because it's made by someone who truly loves what they do. We deliver to your door in Cairo, and every bite will tell you: this is fine home-made food.">من أول ما تشوف الصورة هتحس إن الأكل ده مختلف — لأن اللي بيعمله بيحبه فعلاً. نوصّلك لحد باب بيتك في القاهرة، وكل لقمة هتقولك: ده أكل بيتي راقي.</p>
 
-        <div class="price" id="eggPrice">
-          <span class="egp" data-ar="100 جنيه" data-en="100 EGP">100 جنيه</span>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+              <div class="feature-text">
+                <h4 data-ar="مكونات طازجة" data-en="Fresh Ingredients">مكونات طازجة</h4>
+                <p data-ar="كل حاجة طازجة ومختارة بعناية" data-en="Everything fresh and carefully selected">كل حاجة طازجة ومختارة بعناية</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-heart"></i></div>
+              <div class="feature-text">
+                <h4 data-ar="معمول بحب" data-en="Made with Love">معمول بحب</h4>
+                <p data-ar="كل طبق بيتعمل بقلب وإحساس" data-en="Every dish made with heart and soul">كل طبق بيتعمل بقلب وإحساس</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-truck"></i></div>
+              <div class="feature-text">
+                <h4 data-ar="توصيل للبيت" data-en="Home Delivery">توصيل للبيت</h4>
+                <p data-ar="نوصلك في القاهرة لحد الباب" data-en="Delivered to your door in Cairo">نوصلك في القاهرة لحد الباب</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-award"></i></div>
+              <div class="feature-text">
+                <h4 data-ar="جودة عالية" data-en="Premium Quality">جودة عالية</h4>
+                <p data-ar="وصفات مجربة ومضمونة" data-en="Trusted and proven recipes">وصفات مجربة ومضمونة</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+        <div class="about-image-wrapper">
+          <img src="assets/images/tajine.png" alt="Sultana Food" class="about-image" loading="lazy">
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="card" data-name-ar="رز بسمتي بالزعفران" data-name-en="Saffron Basmati Rice">
-      <img src="rice.png" alt="رز بسمتي بالزعفران">
-      <div class="card-body">
-        <h3 data-ar="رز بسمتي بالزعفران" data-en="Saffron Basmati Rice">رز بسمتي بالزعفران</h3>
-        <p data-ar="رز بسمتي مفلفل بطعم الزعفران الأصلي والمكسرات" data-en="Fluffy basmati rice with authentic saffron and nuts">رز بسمتي مفلفل بطعم الزعفران الأصلي والمكسرات</p>
-        <div class="price">
-          <span class="egp" data-ar="120 جنيه" data-en="120 EGP">120 جنيه</span>
+  <!-- ============ Delivery Section ============ -->
+  <section class="section delivery-section" id="delivery">
+    <div class="container">
+      <h2 class="section-title" data-ar="التوصيل" data-en="Delivery">التوصيل</h2>
+      <p class="delivery-desc" data-ar="نوصلك أكلنا البيتي لحد باب بيتك في أنحاء القاهرة" data-en="We deliver our home-made food right to your door across Cairo">نوصلك أكلنا البيتي لحد باب بيتك في أنحاء القاهرة</p>
+
+      <div class="delivery-badges">
+        <div class="delivery-badge">
+          <div class="badge-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="badge-text">
+            <h4 data-ar="منطقة التوصيل" data-en="Delivery Area">منطقة التوصيل</h4>
+            <p data-ar="القاهرة" data-en="Cairo">القاهرة</p>
+          </div>
         </div>
-        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+        <div class="delivery-badge">
+          <div class="badge-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="badge-text">
+            <h4 data-ar="اطلب عبر واتساب" data-en="Order via WhatsApp">اطلب عبر واتساب</h4>
+            <p><a href="https://wa.me/201040241510" target="_blank" rel="noopener">01040241510</a></p>
+          </div>
+        </div>
+        <div class="delivery-badge">
+          <div class="badge-icon"><i class="fas fa-clock"></i></div>
+          <div class="badge-text">
+            <h4 data-ar="مواعيد الطلب" data-en="Order Hours">مواعيد الطلب</h4>
+            <p data-ar="يومياً من 10 ص - 10 م" data-en="Daily 10 AM - 10 PM">يومياً من 10 ص - 10 م</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-cta">
+        <a href="order.html" class="btn delivery-btn" data-ar="اطلب دلوقتي من الموقع" data-en="Order Now from Website">اطلب دلوقتي من الموقع</a>
       </div>
     </div>
+  </section>
 
-    
-    <div class="card" data-name-ar="سلطة يوناني بالجبنة" data-name-en="Greek Salad with Feta">
-      <img src="salad.png" alt="سلطة يوناني بالجبنة">
-      <div class="card-body">
-        <h3 data-ar="سلطة يوناني بالجبنة" data-en="Greek Salad with Feta">سلطة يوناني بالجبنة</h3>
-        <p data-ar="خضار طازج مع جبنة فيتا وزيتون وصوص زيت زيتون" data-en="Fresh veggies with feta cheese, olives & olive oil dressing">خضار طازج مع جبنة فيتا وزيتون وصوص زيت زيتون</p>
-        <div class="price">
-          <span class="egp" data-ar="150 جنيه" data-en="150 EGP">150 جنيه</span>
-        </div>
-        <button class="btn" onclick="orderNow(this)" data-ar="اشترى الآن" data-en="Buy Now">اشترى الآن</button>
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="assets/images/logo.png" alt="Sultana" class="footer-logo" loading="lazy">
+        <p data-ar="أكل بيتي راقي... معمول بحب وبلمسة بناتي" data-en="Fine home-made food... Made with love & a girly touch">أكل بيتي راقي... معمول بحب وبلمسة بناتي</p>
+      </div>
+      <div class="footer-section">
+        <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <a href="#menu" data-ar="المنيو" data-en="Menu">المنيو</a>
+        <a href="#about" data-ar="عن سلطانة" data-en="About">عن سلطانة</a>
+        <a href="order.html" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+      </div>
+      <div class="footer-section">
+        <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+        <a href="https://wa.me/201040241510" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> 01040241510</a>
+        <p><i class="fas fa-map-marker-alt"></i> <span data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span></p>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 Sultana | <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
 
-  </div>
-</div>
-
-<footer>
-  © 2026 SULTANA | <span data-ar="معمول بحب وبلمسة بناتي 💖" data-en="Made with Love & a Girly Touch 💖">معمول بحب وبلمسة بناتي 💖</span>
-</footer>
-
-<script>
-let currentLang = 'ar';
-
-function toggleLang(){
-  currentLang = currentLang === 'ar' ? 'en' : 'ar';
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-  
-  document.querySelector('.lang-switch').innerText = currentLang === 'ar' ? 'English' : 'عربي';
-  
-  document.querySelectorAll('[data-ar]').forEach(el => {
-    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
-    el.innerText = el.getAttribute(`data-${currentLang}`);
-  });
-}
-
-let eggCount = 5;
-const basePrice = 100;
-
-function changeEggs(num){
-  eggCount += num;
-  if(eggCount < 1) eggCount = 1;
-  
-  document.getElementById('eggCount').innerText = eggCount;
-  
-  const newPriceEGP = Math.max(100, basePrice + ((eggCount - 5) * 10));
-  const newPriceUSD = Math.max(6, 6 + ((eggCount - 5) * 0.6));
-  
-  const egpText = currentLang === 'ar' ? `${newPriceEGP} جنيه` : `${newPriceEGP} EGP`;
-  const usdText = currentLang === 'ar' ? `${newPriceUSD} pound` : `${newPriceUSD} pound`;
-  
-  document.querySelector('#eggPrice .egp').innerText = egpText;
-  document.querySelector('#eggPrice .usd').innerText = usdText;
-}
-
-function orderNow(btn){
-  const card = btn.closest('.card');
-  const name = card.getAttribute(`data-name-${currentLang}`);
-  alert(currentLang === 'ar' ? `تمت إضافة ${name} للسلة 🛒` : `${name} added to cart 🛒`);
-}
-</script>
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
 
 </body>
 </html>

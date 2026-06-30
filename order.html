@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-ar="سلطانة | اطلب الآن" data-en="Sultana | Order Now">سلطانة | اطلب الآن</title>
+
+  <meta name="description" content="اطلب أشهى الأكلات البيتي من سلطانة — توصيل للقاهرة. طاجن فراخ بالكريمة، مكرونة بشاميل، بيض تركي.">
+
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Sultana">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#menu" class="nav-link" data-ar="المنيو" data-en="Menu">المنيو</a></li>
+        <li><a href="index.html#about" class="nav-link" data-ar="عن سلطانة" data-en="About">عن سلطانة</a></li>
+        <li><a href="index.html#delivery" class="nav-link" data-ar="التوصيل" data-en="Delivery">التوصيل</a></li>
+        <li><a href="order.html" class="nav-link nav-link-cta active" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a></li>
+        <li>
+          <button class="lang-switch" onclick="toggleLang()">English</button>
+        </li>
+      </ul>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Order Hero -->
+  <section class="order-hero">
+    <h1 data-ar="اطلب من سلطانة" data-en="Order from Sultana">اطلب من سلطانة</h1>
+    <p data-ar="اختار أكلك، املا بياناتك، وهنوصلك لحد الباب في القاهرة" data-en="Pick your food, fill your details, and we'll deliver to your door in Cairo">اختار أكلك، املا بياناتك، وهنوصلك لحد الباب في القاهرة</p>
+  </section>
+
+  <!-- Order Form -->
+  <div class="order-container">
+    <div class="order-card" id="orderForm">
+
+      <!-- Step 1 -->
+      <div class="order-step">
+        <h3>
+          <span class="step-number">1</span>
+          <span data-ar="اختار أكلك" data-en="Choose Your Food">اختار أكلك</span>
+        </h3>
+        <div class="order-items-grid" id="orderItemsGrid"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="order-step">
+        <h3>
+          <span class="step-number">2</span>
+          <span data-ar="بياناتك" data-en="Your Details">بياناتك</span>
+        </h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customerName" data-ar="الاسم *" data-en="Name *">الاسم *</label>
+            <input type="text" id="customerName" data-ar="اكتب اسمك" data-en="Enter your name" placeholder="اكتب اسمك" required>
+          </div>
+          <div class="form-group">
+            <label for="customerPhone" data-ar="رقم الموبايل *" data-en="Phone Number *">رقم الموبايل *</label>
+            <input type="tel" id="customerPhone" data-ar="01XXXXXXXXX" data-en="01XXXXXXXXX" placeholder="01XXXXXXXXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="customerAddress" data-ar="العنوان بالتفصيل *" data-en="Full Address *">العنوان بالتفصيل *</label>
+          <input type="text" id="customerAddress" data-ar="الشارع، رقم العمارة، الدور، الشقة" data-en="Street, building number, floor, apt" placeholder="الشارع، رقم العمارة، الدور، الشقة" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customerArea" data-ar="المنطقة" data-en="Area">المنطقة</label>
+            <select id="customerArea">
+              <option value="" data-ar="اختار المنطقة" data-en="Select Area" selected>اختار المنطقة</option>
+              <option value="مدينة نصر" data-ar="مدينة نصر" data-en="Nasr City">مدينة نصر</option>
+              <option value="مصر الجديدة" data-ar="مصر الجديدة" data-en="Heliopolis">مصر الجديدة</option>
+              <option value="المعادي" data-ar="المعادي" data-en="Maadi">المعادي</option>
+              <option value="الزمالك" data-ar="الزمالك" data-en="Zamalek">الزمالك</option>
+              <option value="المهندسين" data-ar="المهندسين" data-en="Mohandessin">المهندسين</option>
+              <option value="الدقي" data-ar="الدقي" data-en="Dokki">الدقي</option>
+              <option value="وسط البلد" data-ar="وسط البلد" data-en="Downtown">وسط البلد</option>
+              <option value="الشروق" data-ar="الشروق" data-en="El Shorouk">الشروق</option>
+              <option value="التجمع" data-ar="التجمع" data-en="New Cairo">التجمع</option>
+              <option value="6 أكتوبر" data-ar="6 أكتوبر" data-en="6th of October">6 أكتوبر</option>
+              <option value="أخرى" data-ar="منطقة أخرى" data-en="Other Area">منطقة أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="orderNotes" data-ar="ملاحظات" data-en="Notes">ملاحظات</label>
+            <input type="text" id="orderNotes" data-ar="أي ملاحظات على الأكل أو التوصيل" data-en="Any notes about food or delivery" placeholder="أي ملاحظات على الأكل أو التوصيل">
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="order-step">
+        <h3>
+          <span class="step-number">3</span>
+          <span data-ar="ملخص الطلب" data-en="Order Summary">ملخص الطلب</span>
+        </h3>
+        <div class="order-summary-box">
+          <div id="orderSummary"></div>
+          <div class="summary-row summary-total">
+            <span data-ar="الإجمالي" data-en="Total">الإجمالي</span>
+            <span id="orderTotal">0 جنيه</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Send -->
+      <button class="whatsapp-btn" onclick="sendWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ar="إرسال الطلب عبر واتساب" data-en="Send Order via WhatsApp">إرسال الطلب عبر واتساب</span>
+      </button>
+
+      <p class="order-note" data-ar="* هيتم التواصل معاك على واتساب لتأكيد الطلب ومعرفة مصاريف التوصيل" data-en="* We'll contact you on WhatsApp to confirm the order and delivery fees">* هيتم التواصل معاك على واتساب لتأكيد الطلب ومعرفة مصاريف التوصيل</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="assets/images/logo.png" alt="Sultana" class="footer-logo" loading="lazy">
+        <p data-ar="أكل بيتي راقي... معمول بحب وبلمسة بناتي" data-en="Fine home-made food... Made with love & a girly touch">أكل بيتي راقي... معمول بحب وبلمسة بناتي</p>
+      </div>
+      <div class="footer-section">
+        <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <a href="index.html#menu" data-ar="المنيو" data-en="Menu">المنيو</a>
+        <a href="index.html#about" data-ar="عن سلطانة" data-en="About">عن سلطانة</a>
+        <a href="order.html" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+      </div>
+      <div class="footer-section">
+        <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+        <a href="https://wa.me/201040241510" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> 01040241510</a>
+        <p><i class="fas fa-map-marker-alt"></i> <span data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Sultana | <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
